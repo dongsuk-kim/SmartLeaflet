@@ -50,48 +50,6 @@ order by ano desc limit #{skip},#{amount} <!-- skip이 한 페이지를 가르�
 	 </if>
 </sql> 
 
-<!-- 
- <sql id="criteria">
-	<trim prefix="(" suffix=") AND " prefixOverrides="OR">  
-		<foreach item='type' collection="typeArr">
-			<trim prefix="OR">
-				<choose>
-					<when test='type.equals("T")'>
-						title like CONCAT('%',#{keyword},'%')
-					</when>
-					<when test='type.equals("C")'>
-						content like CONCAT('%',#{keyword},'%')
-					</when>
-					<when test='type.equals("W")'>
-						writer like CONCAT('%',#{keyword},'%')
-					</when>
-				</choose>
-			</trim>
-		</foreach>
-	</trim>
-</sql>  
-
- --><!--  <sql id="criteria">
-	<trim prefix="(" suffix=") AND " prefixOverrides="OR">  
-		<foreach item='type' collection="typeArr">
-			<trim prefix="OR">
-				<choose>
-					<when test="type == 'T'.toString()">
-						title like CONCAT('%',#{keyword},'%')
-					</when>
-					<when test="type == 'C'.toString()">
-						content like CONCAT('%',#{keyword},'%')
-					</when>
-					<when test="type == 'W'.toString()">
-						writer like CONCAT('%',#{keyword},'%')
-					</when>
-				</choose>
-			</trim>
-		</foreach>
-	</trim>
-</sql> -->
-
-
 
 <insert id="insert" parameterType="com.covely.dto.BoardVO">
 	insert into cov_board (ano, mname, ad_writer, start_date, end_date) 
