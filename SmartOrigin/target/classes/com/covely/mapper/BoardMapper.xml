@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.covely.mapper.BoardMapper">	
+
+<!-- table명 바꿔줘야함 전부! -->
+<select id="getList" resultType="com.covely.dto.BoardVO">
+select * from cov_board where ano > 0
+</select>
+
+<!-- 검색 조건 있는 게시판 리스트 처리 -->
+<!-- MySQL 쿼리  
+	select * from cov_board
+	where ano > 0 and content like '%테스트%' order by ano desc limit 0,10;
+-->
+
+<!-- getListWithPaging -->
+<!-- 검색어 조건 없는 게시판 리스트 페이지 처리 -->
+<select id="getListWithPaging" resultType="com.covely.dto.BoardVO" parameterType="com.covely.dto.Criteria">
+
+select * from cov_board where ano > 0 
+<include refid="criteria"></include> <!-- 검색조건을 가르킴 -->
+order by ano desc limit #{skip},#{amount} <!-- skip이 한 페이지를 가르킴 amount는 페이지 안에 개수-->
+</select>
+
+
+<!-- 검색 조건을 포함한 총 게시물 수 계산 -->
+<select id="getTotalCount" resultType="int">
+	select count(*) from cov_board 
+	where ano > 0
+<include refid="criteria"></include>
+</select>
+
+<!-- <sql> 검색 데이터의 개수처리 -->
+
+<sql id="criteria">
+ 	<if test='typeArr !=null'>
+	<foreach collection="typeArr" item="type" separator="OR" open="AND (" close=")">
+	  <if test='type.equals("t")'>
+	  	mname like concat('%', #{keyword},'%') <!-- title을 mname으로 변경하니 검색창에 조건에 맞는 이름이 잘 나왔음! (문제해결) -->
+	  </if>
+	  <if test='type.equals("c")'>
+	  	ad_writer like concat('%', #{keyword},'%')  <!-- content을 ad_writer으로 변경하니 검색창에 조건에 맞는 이름이 잘 나왔음! (문제해결) -->
+	  </if>
+	  <if test='type.equals("w")'>
+	  	writer like concat('%', #{keyword},'%')
+	  </if>
+	</foreach>
+	 </if>
+</sql> 
+
+<!-- 
+ <sql id="criteria">
+	<trim prefix="(" suffix=") AND " prefixOverrides="OR">  
+		<foreach item='type' collection="typeArr">
+			<trim prefix="OR">
+				<choose>
+					<when test='type.equals("T")'>
+						title like CONCAT('%',#{keyword},'%')
+					</when>
+					<when test='type.equals("C")'>
+						content like CONCAT('%',#{keyword},'%')
+					</when>
+					<when test='type.equals("W")'>
+						writer like CONCAT('%',#{keyword},'%')
+					</when>
+				</choose>
+			</trim>
+		</foreach>
+	</trim>
+</sql>  
+
+ --><!--  <sql id="criteria">
+	<trim prefix="(" suffix=") AND " prefixOverrides="OR">  
+		<foreach item='type' collection="typeArr">
+			<trim prefix="OR">
+				<choose>
+					<when test="type == 'T'.toString()">
+						title like CONCAT('%',#{keyword},'%')
+					</when>
+					<when test="type == 'C'.toString()">
+						content like CONCAT('%',#{keyword},'%')
+					</when>
+					<when test="type == 'W'.toString()">
+						writer like CONCAT('%',#{keyword},'%')
+					</when>
+				</choose>
+			</trim>
+		</foreach>
+	</trim>
+</sql> -->
+
+
+
+<insert id="insert" parameterType="com.covely.dto.BoardVO">
+	insert into cov_board (ano, mname, ad_writer, start_date, end_date) 
+	values (0, #{mname}, #{ad_writer},#{start_date},#{end_date})
+</insert>
+
+<insert id="insertSelectKey">
+	insert into cov_board (ano, mname, ad_writer, start_date, end_date) 
+	values (0, #{mname}, #{ad_writer},#{start_date},#{end_date})
+</insert>
+
+<select id="read" resultType="com.covely.dto.BoardVO">
+	select * from cov_board where ano = #{ano}
+</select>
+
+<delete id="delete">
+	delete from cov_board where ano = #{ano}
+</delete>
+
+<update id="update">
+	update cov_board set mname = #{mname},
+	ad_writer = #{ad_writer},
+	start_date = #{start_date},
+	end_date = end_date
+	where ano = #{ano}
+</update>
+
+<update id="updateReplyCnt">
+	update cov_board set replycnt = replycnt + #{amount} where ano = #{ano}
+</update>
+
+
+</mapper>

@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Character set configuration -->
+<meta charset="UTF-8">
+<title>PList - Bootstrap Product Layout Pack</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Viewport configuration, scaling options -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!-- CSS Stylesheet -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/product-4.css" rel="stylesheet" type="text/css">
+<link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
+<link href="css/animations.css" rel="stylesheet" type="text/css">
+<!-- Font Awesome icon -->
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<!-- Google web font  -->
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+<body>
+<!-- Space top -->
+<div class="space-top"><i class="fa fa-bullseye" aria-hidden="true"></i> Header Section <i class="fa fa-bullseye" aria-hidden="true"></i></div>
+<div class="pld">
+<!-- Container start -->
+<div class="container main-container headerOffset">
+  <div class="animatedParent">
+    <!-- Row Start -->
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-12">
+        <!-- Panel Group Start -->
+        <div class="panel-group" id="accordionNo">
+          <!-- Panel Default Start -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title"><a data-toggle="collapse" href="#collapseCategory" class="collapseWill active "> <span class="pull-left"> <i class="fa fa-caret-right"></i></span> Category </a></h4>
+            </div>
+            <div id="collapseCategory" class="panel-collapse collapse in">
+              <!-- Panel Body Start -->
+              <div class="panel-body">
+                <ul class="nav nav-pills nav-stacked tree">
+                  <li class="active dropdown-tree open-tree"><a class="dropdown-tree-a"> <span class="badge pull-right">42</span> WOMEN COLLECTION </a>
+                    <ul class="category-level-2 dropdown-menu-tree">
+                      <li class="dropdown-tree"><a class="dropdown-tree-a" href="#"> Tshirt</a></li>
+                      <li><a href="product-detail.html" class="animated bounceIn"> Shoes</a></li>
+                      <li><a href="product-detail.html" class="animated bounceIn"> Shirt</a></li>
+                      <li><a href="product-detail.html" class="animated bounceIn">T shirt</a></li>
+                      <li><a href="product-detail.html" class="animated bounceIn"> Shirt</a></li>
+                      <li><a href="product-detail.html" class="animated bounceIn">Fragrances</a></li>
+                      <li><a href="product-detail.html" class="animated bounceIn">Scarf</a></li>
+                      <li><a href="product-detail.html" class="animated bounceIn">Sandal</a></li>
+                      <li><a href="product-detail.html" class="animated bounceIn">Underwear</a></li>
+                      <li><a href="product-detail.html" class="animated bounceIn">Winter Collection</a></li>
+                      <li><a href="product-detail.html" class="animated bounceIn">Men Accessories</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="product-detail.html" class="animated bounceIn"> <span class="badge pull-right">42</span> MEN COLLECTION </a></li>
+                  <li><a href="product-detail.html" class="animated bounceIn"> <span class="badge pull-right">42</span> Baby & Kids </a></li>
+                  <li><a href="product-detail.html" class="animated bounceIn"> <span class="badge pull-right">42</span> Home & Kitchen </a></li>
+                  <li><a href="product-detail.html" class="animated bounceIn"> <span class="badge pull-right">42</span> Baby & Kids </a></li>
+                  <li><a href="product-detail.html" class="animated bounceIn"> <span class="badge pull-right">42</span> More Stores </a></li>
+                  <li><a href="product-detail.html" class="animated bounceIn"> <span class="badge pull-right">42</span> Offers Zone </a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Panel Default Start -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title"><a class="collapseWill active " data-toggle="collapse" href="#collapsePrice"> Price <span class="pull-left"> <i class="fa fa-caret-right"></i></span> </a> <span class="pull-right clearFilter  label-danger"> Clear </span></h4>
+            </div>
+            <div id="collapsePrice" class="panel-collapse collapse in">
+              <div class="panel-body priceFilterBody">
+                <label>
+                <input type="radio" name="agree" value="0"/>
+                100$ - 500$</label>
+                <br>
+                <label>
+                <input type="radio" name="agree" value="1"/>
+                500$ - 1000$</label>
+                <br>
+                <label>
+                <input type="radio" name="agree" value="2"/>
+                1000$ - 1500$</label>
+                <br>
+                <label>
+                <input type="radio" name="agree" value="3"/>
+                1500$ - 2000$</label>
+                <br>
+                <label>
+                <input type="radio" name="agree" value="4"/>
+                2000$ - 2500$</label>
+                <br>
+                <label>
+                <input type="radio" name="agree" value="5"/>
+                2500$ - 3000$</label>
+                <br>
+                <label>
+                <input type="radio" name="agree" value="6" disabled checked />
+                Don't know</label>
+                <hr>
+                <p>
+                  <label for="amount">Price range:</label>
+                  <input type="text" id="amount" readonly class="price-range">
+                </p>
+                <div id="slider-range"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Panel Default Start -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title"><a data-toggle="collapse" href="#collapseBrand" class="collapseWill active "> Brand <span class="pull-left"> <i class="fa fa-caret-right"></i></span> </a></h4>
+            </div>
+            <div id="collapseBrand" class="panel-collapse collapse in">
+              <div class="panel-body smoothscroll maxheight300">
+                <div class="block-element">
+                  <label>
+                  <input type="checkbox" name="tour" value="0"/>
+                  Armani </label>
+                </div>
+                <div class="block-element">
+                  <label>
+                  <input type="checkbox" name="tour" value="1"/>
+                  Gucci </label>
+                </div>
+                <div class="block-element">
+                  <label>
+                  <input type="checkbox" name="tour" value="2"/>
+                  Louis Vuitton </label>
+                </div>
+                <div class="block-element">
+                  <label>
+                  <input type="checkbox" name="tour" value="3"/>
+                  Chanel </label>
+                </div>
+                <div class="block-element">
+                  <label>
+                  <input type="checkbox" name="tour" value="3"/>
+                  Roberto Cavalli </label>
+                </div>
+                <div class="block-element">
+                  <label>
+                  <input type="checkbox" name="tour" value="3"/>
+                  Valentino </label>
+                </div>
+                <div class="block-element">
+                  <label> &nbsp; </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Panel Default Start -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title"><a data-toggle="collapse" href="#collapseColor" class="collapseWill active "> Color <span class="pull-left"> <i class="fa fa-caret-right"></i></span> </a></h4>
+            </div>
+            <div id="collapseColor" class="panel-collapse collapse in">
+              <div class="panel-body smoothscroll maxheight300 color-filter">
+                <div class="block-element">
+                  <label>
+                  <input type="checkbox" name="tour" value="0"/>
+                  <small></small> Black <span>(123)</span> </label>
+                </div>
+                <div class="block-element">
+                  <label>
+                  <input type="checkbox" name="tour" value="1"/>
+                  <small></small> Blue (434) </label>
+                </div>
+                <div class="block-element">
+                  <label>
+                  <input type="checkbox" name="tour" value="2"/>
+                  <small></small> Red (338) </label>
+                </div>
+                <div class="block-element">
+                  <label>
+                  <input type="checkbox" name="tour" value="3"/>
+                  <small></small> Green (253) </label>
+                </div>
+                <div class="block-element">
+                  <label>
+                  <input type="checkbox" name="tour" value="3"/>
+                  <small></small> Brown (240) </label>
+                </div>
+                <div class="block-element">
+                  <label>
+                  <input type="checkbox" name="tour" value="3"/>
+                  <small></small> Pink (212) </label>
+                </div>
+                <div class="block-element">
+                  <label> &nbsp; </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9 col-md-9 col-sm-12">
+        <!-- Product Filter Start -->
+        <div class="productFilter clearfix">
+          <p class="pull-left">Showing <strong>25</strong> - of <strong>926</strong> Results</p>
+          <div class="pull-right ">
+            <div class="change-order pull-right">
+              <select class="form-control" name="orderby">
+                <option selected="selected">Default sorting</option>
+                <option value="popularity">Sort by popularity</option>
+                <option value="rating">Sort by average rating</option>
+                <option value="date">Sort by newness</option>
+                <option value="price">Sort by price: low to high</option>
+                <option value="price-desc">Sort by price: high to low</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row  categoryProduct xsResponse clearfix">
+          <div class="item col-sm-4 col-lg-3 col-md-3 col-xs-12">
+            <!-- Product Display  -->
+            <div class="product"> <a class="add-fav tooltipHere" rel="tooltip" data-original-title="Add to Wishlist" data-placement="top"> <i class="fa fa-heart-o" aria-hidden="true"></i> </a>
+              <div class="image">
+                <div class="quickview"> <a class="btn btn-xs btn-quickview" href="product-detail.html" >Quick View </a> </div>
+                <a href="product-detail.html" class="animated bounceIn"><img src="https://placehold.it/480x720" alt="img" class="img-responsive"></a>
+                <div class="promotion"><span class="discount">50% OFF</span></div>
+              </div>
+              <div class="description">
+                <h4><a href="product-detail.html" class="animated bounceIn">Mustard White Cotton Lycra Womens Capri</a><span class="new-tag"></span></h4>
+                <!-- Product List item  -->
+                <ul class="list-unstyled pro-list-item">
+                  <li>Brand: Mustard</li>
+                  <li>Color: White</li>
+                  <li>Stock: Available</li>
+                  <li>Cash On Delivery: Available</li>
+                </ul>
+              </div>
+              <!-- Product Price  -->
+              <div class="price"><span class="price-old">$100</span><span>$25</span><span class="price-off">75% Off</span></div>
+              <!-- Add to cart Button  -->
+              <div class="action-control"><a href="product-cart.html" class="btn btn-default btn-sm hvr-float-shadow"> <span class="add2cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart </span> </a></div>
+            </div>
+          </div>
+          <div class="item col-sm-4 col-lg-3 col-md-3 col-xs-12">
+            <!-- Product Display  -->
+            <div class="product"> <a class="add-fav tooltipHere" rel="tooltip" data-original-title="Add to Wishlist" data-placement="top"> <i class="fa fa-heart-o" aria-hidden="true"></i> </a>
+              <div class="image">
+                <div class="quickview"> <a class="btn btn-xs btn-quickview" href="product-detail.html" >Quick View </a> </div>
+                <a href="product-detail.html" class="animated bounceIn"><img src="https://placehold.it/480x720" alt="img" class="img-responsive"></a>
+                <div class="promotion"><span class="discount">35% OFF</span></div>
+              </div>
+              <div class="description">
+                <h4><a href="product-detail.html" class="animated bounceIn">Mustard White Cotton Lycra Womens Capri</a></h4>
+                <!-- Product List item  -->
+                <ul class="list-unstyled pro-list-item">
+                  <li>Brand: Mustard</li>
+                  <li>Color: White</li>
+                  <li>Stock: Available</li>
+                  <li>Cash On Delivery: Available</li>
+                </ul>
+              </div>
+              <!-- Product Price  -->
+              <div class="price"><span class="price-old">$100</span><span>$25</span><span class="price-off">75% Off</span></div>
+              <!-- Add to cart Button  -->
+              <div class="action-control"><a href="product-cart.html" class="btn btn-default btn-sm hvr-float-shadow"> <span class="add2cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart </span> </a></div>
+            </div>
+          </div>
+          <div class="item col-sm-4 col-lg-3 col-md-3 col-xs-12">
+            <!-- Product Display  -->
+            <div class="product"> <a class="add-fav tooltipHere" rel="tooltip" data-original-title="Add to Wishlist" data-placement="top"> <i class="fa fa-heart-o" aria-hidden="true"></i> </a>
+              <div class="image">
+                <div class="quickview"> <a class="btn btn-xs btn-quickview" href="product-detail.html" >Quick View </a> </div>
+                <a href="product-detail.html" class="animated bounceIn"><img src="https://placehold.it/480x720" alt="img" class="img-responsive"></a>
+                <div class="promotion"><span class="discount">10% OFF</span></div>
+              </div>
+              <div class="description">
+                <h4><a href="product-detail.html" class="animated bounceIn">Mustard White Cotton Lycra Womens Capri</a><span class="new-tag"></span></h4>
+                <!-- Product List item  -->
+                <ul class="list-unstyled pro-list-item">
+                  <li>Brand: Mustard</li>
+                  <li>Color: White</li>
+                  <li>Stock: Available</li>
+                  <li>Cash On Delivery: Available</li>
+                </ul>
+              </div>
+              <!-- Product Price  -->
+              <div class="price"><span class="price-old">$100</span><span>$25</span><span class="price-off">75% Off</span></div>
+              <!-- Add to cart Button  -->
+              <div class="action-control"><a href="product-cart.html" class="btn btn-default btn-sm hvr-float-shadow"> <span class="add2cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart </span> </a></div>
+            </div>
+          </div>
+          <div class="item col-sm-4 col-lg-3 col-md-3 col-xs-12">
+            <!-- Product Display  -->
+            <div class="product"> <a class="add-fav tooltipHere" rel="tooltip" data-original-title="Add to Wishlist" data-placement="top"> <i class="fa fa-heart-o" aria-hidden="true"></i> </a>
+              <div class="image">
+                <div class="quickview"> <a class="btn btn-xs btn-quickview" href="product-detail.html" >Quick View </a> </div>
+                <a href="product-detail.html" class="animated bounceIn"><img src="https://placehold.it/480x720" alt="img" class="img-responsive"></a>
+                <div class="promotion"><span class="discount">30% OFF</span></div>
+              </div>
+              <div class="description">
+                <h4><a href="product-detail.html" class="animated bounceIn">Mustard White Cotton Lycra Womens Capri</a></h4>
+                <!-- Product List item  -->
+                <ul class="list-unstyled pro-list-item">
+                  <li>Brand: Mustard</li>
+                  <li>Color: White</li>
+                  <li>Stock: Available</li>
+                  <li>Cash On Delivery: Available</li>
+                </ul>
+              </div>
+              <!-- Product Price  -->
+              <div class="price"><span class="price-old">$100</span><span>$25</span><span class="price-off">75% Off</span></div>
+              <!-- Add to cart Button  -->
+              <div class="action-control"><a href="product-cart.html" class="btn btn-default btn-sm hvr-float-shadow"> <span class="add2cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart </span> </a></div>
+            </div>
+          </div>
+          <div class="item col-sm-4 col-lg-3 col-md-3 col-xs-12">
+            <!-- Product Display  -->
+            <div class="product"> <a class="add-fav tooltipHere" rel="tooltip" data-original-title="Add to Wishlist" data-placement="top"> <i class="fa fa-heart-o" aria-hidden="true"></i> </a>
+              <div class="image">
+                <div class="quickview"> <a class="btn btn-xs btn-quickview" href="product-detail.html" >Quick View </a> </div>
+                <a href="product-detail.html" class="animated bounceIn"><img src="https://placehold.it/480x720" alt="img" class="img-responsive"></a>
+                <div class="promotion"><span class="discount">15% OFF</span></div>
+              </div>
+              <div class="description">
+                <h4><a href="product-detail.html" class="animated bounceIn">Mustard White Cotton Lycra Womens Capri</a></h4>
+                <!-- Product List item  -->
+                <ul class="list-unstyled pro-list-item">
+                  <li>Brand: Mustard</li>
+                  <li>Color: White</li>
+                  <li>Stock: Available</li>
+                  <li>Cash On Delivery: Available</li>
+                </ul>
+              </div>
+              <!-- Product Price  -->
+              <div class="price"><span class="price-old">$100</span><span>$25</span><span class="price-off">75% Off</span></div>
+              <!-- Add to cart Button  -->
+              <div class="action-control"><a href="product-cart.html" class="btn btn-default btn-sm hvr-float-shadow"> <span class="add2cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart </span> </a></div>
+            </div>
+          </div>
+          <div class="item col-sm-4 col-lg-3 col-md-3 col-xs-12">
+            <!-- Product Display  -->
+            <div class="product"> <a class="add-fav tooltipHere" rel="tooltip" data-original-title="Add to Wishlist" data-placement="top"> <i class="fa fa-heart-o" aria-hidden="true"></i> </a>
+              <div class="image">
+                <div class="quickview"> <a class="btn btn-xs btn-quickview" href="product-detail.html" >Quick View </a> </div>
+                <a href="product-detail.html" class="animated bounceIn"><img src="https://placehold.it/480x720" alt="img" class="img-responsive"></a>
+                <div class="promotion"><span class="discount">10% OFF</span></div>
+              </div>
+              <div class="description">
+                <h4><a href="product-detail.html" class="animated bounceIn">Mustard White Cotton Lycra Womens Capri</a><span class="new-tag"></span></h4>
+                <!-- Product List item  -->
+                <ul class="list-unstyled pro-list-item">
+                  <li>Brand: Mustard</li>
+                  <li>Color: White</li>
+                  <li>Stock: Available</li>
+                  <li>Cash On Delivery: Available</li>
+                </ul>
+              </div>
+              <!-- Product Price  -->
+              <div class="price"><span class="price-old">$100</span><span>$25</span><span class="price-off">75% Off</span></div>
+              <!-- Add to cart Button  -->
+              <div class="action-control"><a href="product-cart.html" class="btn btn-default btn-sm hvr-float-shadow"> <span class="add2cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart </span> </a></div>
+            </div>
+          </div>
+          <div class="item col-sm-4 col-lg-3 col-md-3 col-xs-12">
+            <!-- Product Display  -->
+            <div class="product"> <a class="add-fav tooltipHere" rel="tooltip" data-original-title="Add to Wishlist" data-placement="top"> <i class="fa fa-heart-o" aria-hidden="true"></i> </a>
+              <div class="image">
+                <div class="quickview"> <a class="btn btn-xs btn-quickview" href="product-detail.html" >Quick View </a> </div>
+                <a href="product-detail.html" class="animated bounceIn"><img src="https://placehold.it/480x720" alt="img" class="img-responsive"></a>
+                <div class="promotion"><span class="discount">40% OFF</span></div>
+              </div>
+              <div class="description">
+                <h4><a href="product-detail.html" class="animated bounceIn">Mustard White Cotton Lycra Womens Capri</a></h4>
+                <!-- Product List item  -->
+                <ul class="list-unstyled pro-list-item">
+                  <li>Brand: Mustard</li>
+                  <li>Color: White</li>
+                  <li>Stock: Available</li>
+                  <li>Cash On Delivery: Available</li>
+                </ul>
+              </div>
+              <!-- Product Price  -->
+              <div class="price"><span class="price-old">$100</span><span>$25</span><span class="price-off">75% Off</span></div>
+              <!-- Add to cart Button  -->
+              <div class="action-control"><a href="product-cart.html" class="btn btn-default btn-sm hvr-float-shadow"> <span class="add2cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart </span> </a></div>
+            </div>
+          </div>
+          <div class="item col-sm-4 col-lg-3 col-md-3 col-xs-12">
+            <!-- Product Display  -->
+            <div class="product"> <a class="add-fav tooltipHere" rel="tooltip" data-original-title="Add to Wishlist" data-placement="top"> <i class="fa fa-heart-o" aria-hidden="true"></i> </a>
+              <div class="image">
+                <div class="quickview"> <a class="btn btn-xs btn-quickview" href="product-detail.html" >Quick View </a> </div>
+                <a href="product-detail.html" class="animated bounceIn"><img src="https://placehold.it/480x720" alt="img" class="img-responsive"></a>
+                <div class="promotion"><span class="discount">50% OFF</span></div>
+              </div>
+              <div class="description">
+                <h4><a href="product-detail.html" class="animated bounceIn">Mustard White Cotton Lycra Womens Capri</a></h4>
+                <!-- Product List item  -->
+                <ul class="list-unstyled pro-list-item">
+                  <li>Brand: Mustard</li>
+                  <li>Color: White</li>
+                  <li>Stock: Available</li>
+                  <li>Cash On Delivery: Available</li>
+                </ul>
+              </div>
+              <!-- Product Price  -->
+              <div class="price"><span class="price-old">$100</span><span>$25</span><span class="price-off">75% Off</span></div>
+              <!-- Add to cart Button  -->
+              <div class="action-control"><a href="product-cart.html" class="btn btn-default btn-sm hvr-float-shadow"> <span class="add2cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart </span> </a></div>
+            </div>
+          </div>
+          <div class="item col-sm-4 col-lg-3 col-md-3 col-xs-12">
+            <!-- Product Display  -->
+            <div class="product"> <a class="add-fav tooltipHere" rel="tooltip" data-original-title="Add to Wishlist" data-placement="top"> <i class="fa fa-heart-o" aria-hidden="true"></i> </a>
+              <div class="image">
+                <div class="quickview"> <a class="btn btn-xs btn-quickview" href="product-detail.html" >Quick View </a> </div>
+                <a href="product-detail.html" class="animated bounceIn"><img src="https://placehold.it/480x720" alt="img" class="img-responsive"></a>
+                <div class="promotion"><span class="discount">20% OFF</span></div>
+              </div>
+              <div class="description">
+                <h4><a href="product-detail.html" class="animated bounceIn">Mustard White Cotton Lycra Womens Capri</a><span class="new-tag"></span></h4>
+                <!-- Product List item  -->
+                <ul class="list-unstyled pro-list-item">
+                  <li>Brand: Mustard</li>
+                  <li>Color: Blue</li>
+                  <li>Stock: Available</li>
+                  <li>Cash On Delivery: Available</li>
+                </ul>
+              </div>
+              <!-- Product Price  -->
+              <div class="price"><span class="price-old">$100</span><span>$25</span><span class="price-off">75% Off</span></div>
+              <!-- Add to cart Button  -->
+              <div class="action-control"><a href="product-cart.html" class="btn btn-default btn-sm hvr-float-shadow"> <span class="add2cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart </span> </a></div>
+            </div>
+          </div>
+          <div class="item col-sm-4 col-lg-3 col-md-3 col-xs-12">
+            <!-- Product Display  -->
+            <div class="product"> <a class="add-fav tooltipHere" rel="tooltip" data-original-title="Add to Wishlist" data-placement="top"> <i class="fa fa-heart-o" aria-hidden="true"></i> </a>
+              <div class="image">
+                <div class="quickview"> <a class="btn btn-xs btn-quickview" href="product-detail.html" >Quick View </a> </div>
+                <a href="product-detail.html" class="animated bounceIn"><img src="https://placehold.it/480x720" alt="img" class="img-responsive"></a>
+                <div class="promotion"><span class="discount">70% OFF</span></div>
+              </div>
+              <div class="description">
+                <h4><a href="product-detail.html" class="animated bounceIn">Mustard White Cotton Lycra Womens Capri</a></h4>
+                <!-- Product List item  -->
+                <ul class="list-unstyled pro-list-item">
+                  <li>Brand: Golden</li>
+                  <li>Color: White</li>
+                  <li>Stock: Available</li>
+                  <li>Cash On Delivery: Available</li>
+                </ul>
+              </div>
+              <!-- Product Price  -->
+              <div class="price"><span class="price-old">$100</span><span>$25</span><span class="price-off">75% Off</span></div>
+              <!-- Add to cart Button  -->
+              <div class="action-control"><a href="product-cart.html" class="btn btn-default btn-sm hvr-float-shadow"> <span class="add2cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart </span> </a></div>
+            </div>
+          </div>
+          <div class="item col-sm-4 col-lg-3 col-md-3 col-xs-12">
+            <!-- Product Display  -->
+            <div class="product"> <a class="add-fav tooltipHere" rel="tooltip" data-original-title="Add to Wishlist" data-placement="top"> <i class="fa fa-heart-o" aria-hidden="true"></i> </a>
+              <div class="image">
+                <div class="quickview"> <a class="btn btn-xs btn-quickview" href="product-detail.html" >Quick View </a> </div>
+                <a href="product-detail.html" class="animated bounceIn"><img src="https://placehold.it/480x720" alt="img" class="img-responsive"></a>
+                <div class="promotion"><span class="discount">10% OFF</span></div>
+              </div>
+              <div class="description">
+                <h4><a href="product-detail.html" class="animated bounceIn">Mustard White Cotton Lycra Womens Capri</a></h4>
+                <!-- Product List item  -->
+                <ul class="list-unstyled pro-list-item">
+                  <li>Brand: Silver</li>
+                  <li>Color: White</li>
+                  <li>Stock: Available</li>
+                  <li>Cash On Delivery: Available</li>
+                </ul>
+              </div>
+              <!-- Product Price  -->
+              <div class="price"><span class="price-old">$100</span><span>$25</span><span class="price-off">75% Off</span></div>
+              <!-- Add to cart Button  -->
+              <div class="action-control"><a href="product-cart.html" class="btn btn-default btn-sm hvr-float-shadow"> <span class="add2cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart </span> </a></div>
+            </div>
+          </div>
+          <div class="item col-sm-4 col-lg-3 col-md-3 col-xs-12">
+            <!-- Product Display  -->
+            <div class="product"> <a class="add-fav tooltipHere" rel="tooltip" data-original-title="Add to Wishlist" data-placement="top"> <i class="fa fa-heart-o" aria-hidden="true"></i> </a>
+              <div class="image">
+                <div class="quickview"> <a class="btn btn-xs btn-quickview" href="product-detail.html" >Quick View </a> </div>
+                <a href="product-detail.html" class="animated bounceIn"><img src="https://placehold.it/480x720" alt="img" class="img-responsive"></a>
+                <div class="promotion"><span class="discount">25% OFF</span></div>
+              </div>
+              <div class="description">
+                <h4><a href="product-detail.html" class="animated bounceIn">Mustard White Cotton Lycra Womens Capri</a><span class="new-tag"></span></h4>
+                <!-- Product List item  -->
+                <ul class="list-unstyled pro-list-item">
+                  <li>Brand: Gem</li>
+                  <li>Color: Pink</li>
+                  <li>Stock: Available</li>
+                  <li>Cash On Delivery: Available</li>
+                </ul>
+              </div>
+              <!-- Product Price  -->
+              <div class="price"><span class="price-old">$100</span><span>$25</span><span class="price-off">75% Off</span></div>
+              <!-- Add to cart Button  -->
+              <div class="action-control"><a href="product-cart.html" class="btn btn-default btn-sm hvr-float-shadow"> <span class="add2cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart </span> </a></div>
+            </div>
+          </div>
+        </div>
+        <div class="categoryFooter">
+		<!-- pagination list   -->
+          <div class="pagination pull-left no-margin-top">
+            <ul class="pagination no-margin-top">
+              <li><a href="product-detail.html" class="animated bounceIn">«</a></li>
+              <li class="active"><a href="product-detail.html" class="animated bounceIn">1</a></li>
+              <li><a href="product-detail.html" class="animated bounceIn">2</a></li>
+              <li><a href="product-detail.html" class="animated bounceIn">3</a></li>
+              <li><a href="product-detail.html" class="animated bounceIn">4</a></li>
+              <li><a href="product-detail.html" class="animated bounceIn">5</a></li>
+              <li><a href="product-detail.html" class="animated bounceIn">»</a></li>
+            </ul>
+          </div>
+          <div class="pull-right pull-right col-sm-4 col-xs-12 no-padding text-right text-left-xs">
+            <p class="mar-top">Showing 1–450 of 12 results</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Space bottom -->
+<div class="space-bottom"><i class="fa fa-bullseye" aria-hidden="true"></i> Footer Section <i class="fa fa-bullseye" aria-hidden="true"></i></div>
+<!-- jQuery JavaScript plugins -->
+<script src="js/jquery-1.12.4.min.js" type="text/javascript"></script>
+<!-- Bootstrap JavaScript plugins -->
+<script src="js/bootstrap.js" type="text/javascript"></script>
+<!-- JavaScript Price Range Slider plugins -->
+<script src="js/jquery-ui.js" type="text/javascript"></script>
+<script src="js/price-range.js" type="text/javascript"></script>
+<!-- Bootstrap Toottip JavaScript plugins -->
+<script src="js/bootstrap-tooltip.js"></script>
+<script src="js/tooltip.js"></script> 
+<!-- Text Animation JavaScript plugins -->
+<script src="js/css-animate.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/covely/security/CustomUserDetailsService.java=UTF-8
+encoding//src/main/webapp/WEB-INF/spring/security-context.xml=UTF-8
+encoding//src/main/webapp/WEB-INF/views/smart/map.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/smart/orientation.jsp=UTF-8

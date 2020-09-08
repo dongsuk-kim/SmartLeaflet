@@ -1,0 +1,129 @@
+/* This is demo purpose Body CSS */
+body {
+	font-family: "Open Sans", sans-serif;
+	 background: #cdeb8b; /* Old browsers */
+         background: -moz-linear-gradient(top,  #cdeb8b 0%, #cdeb8b 100%); /* FF3.6-15 */
+         background: -webkit-linear-gradient(top,  #cdeb8b 0%,#cdeb8b 100%); /* Chrome10-25,Safari5.1-6 */
+         background: linear-gradient(to bottom,  #cdeb8b 0%,#cdeb8b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+         filter: progid:DXimagesTransform.Microsoft.gradient( startColorstr='#cdeb8b', endColorstr='#cdeb8b',GradientType=0 ); /* IE6-9 */
+}
+a:focus {
+	outline:0px solid
+}
+/* logo center */
+.text-center.logo > h2 {
+	font-family: "Open Sans", sans-serif;
+	font-size: 38px;
+	font-weight: bold;
+		    margin-top: 10px;
+}
+.text-center.logo span {
+	color: #008080;
+	font-size: 60px;
+}
+.text-center a:hover .text-heading {
+	color: #000000;
+}
+/* text title */
+.text-heading {
+	text-decoration:none;
+ transition: all .3s ease 0s;
+}
+.text-heading:hover {
+	color: #6fc138;
+}
+/* Logo postion */
+.logo {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-bottom: 2px dotted #333;
+	border-top: 2px dotted #333;
+}
+.text-center.logo > img {
+	position: relative;
+	width: 200px;
+}
+.center-item {
+	width: 100%;
+}
+.responsive {
+	max-width: 100%;
+}
+.image-shop-box.demo-full {
+	text-decoration: none;
+}
+.text-center.logo > h2::after {
+ background: #FF2B42;
+ content: "";
+ height: 3px;
+ left: 50%;
+ margin-left: -30px;
+ position: absolute;
+ top: -9px;
+ width: 60px;
+}
+.image-heading {
+	margin: 50px 0 80px;
+}
+.image-shop-box {
+	margin-bottom: 50px;
+	display: block;
+	text-align: center;
+}
+.heading-title {
+	text-transform: uppercase;
+	color:#333;
+	margin: 50px 0;
+}
+.text-heading {
+	color: #A52A2A;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+/* footer copyright */
+.copyright {
+	margin: 30px 0;
+}
+/* background */
+.image-bg {
+	border: 10px solid rgb(102, 102, 102);
+	border-radius: 2px;
+	display: inline-block;
+	height: 304px;
+	position: relative;
+	width: 360px;
+}
+.image-bg .image-shop-scroll {
+	background-position: center 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 284px;
+	left: 0;
+	margin: 0 auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 340px;
+}
+/* images scrool */
+.image-bg .image-shop-scroll {
+	transition: all 6s ease-out 0s;
+	-webkit-transition: all 6s ease-out 0s;
+	-moz-transition: all 6s ease-out 0s;
+	-ms-transition: all 6s ease-out 0s;
+	-o-transition: all 6s ease-out 0s;
+}
+/* images hover */
+.image-bg:hover .image-shop-scroll {
+	background-position: center 100%!important;
+}
+/* copyright link */
+.copyright > a {
+	color:#FF2B42;
+}
+/* margin top */
+.row.mar-top
+{
+margin-top:50px;
+}

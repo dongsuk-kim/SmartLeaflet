@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.covely.mapper.SmartMapper">
+
+<!-- <sql> 검색 데이터의 개수처리 -->
+<sql id="criteria">
+ 	<if test='typeArr !=null'>
+	<foreach collection="typeArr" item="type" separator="OR" open="AND (" close=")">
+	  <if test='type.equals("mp_name")'>
+	  	mp_name like concat('%', #{keyword},'%')
+	  </if>
+	 
+	</foreach>
+	 </if>
+</sql> 
+
+
+	<!-- 연습용 -->
+	<!-- <select id="getList" resultType="com.covely.dto.MartDTO">
+		select * from mart where mno = ${mno}
+	</select> -->
+	
+	<select id="getList" resultType="com.covely.dto.MartProductDTO">
+       SELECT *, concat(FORMAT(mp_price , 0),'원') price FROM mart_product mp INNER JOIN mart m ON mp.mno=m.mno where 1=1
+      <if test='type != null'>
+          and mp_name like concat('%',#{type},'%')
+       </if>
+       order by mp_price asc;
+   </select>
+	
+	
+	
+	
+	<!-- 상품페이지(리스트) -->
+	<select id="productList" resultType="com.covely.dto.MartProductDTO">
+		select * , concat(FORMAT(mp_price , 0),'원') price from mart_product 
+		<where> 
+			mno =  #{mno}
+		  <if test="cri.type !=null">
+		  and mp_img like concat('%',#{cri.type},'%')	
+		  </if>
+		  order by mp_no asc limit #{cri.skip},#{cri.amount} 	<!-- skip이 한 페이지를 가르킴 amount는 페이지 안에 개수-->
+		</where>
+	</select>
+	
+	<!-- 마트리스트 -->
+	<select id="martList" resultType="com.covely.dto.MartDTO">
+		select * from mart where mno = #{mno} 							<!-- #{mno}: 값을 세팅해줄때 ?로 나옴(입력받을때 나오는 값 -->
+	</select>
+	
+	<!-- 전단지 리스트 -->
+	<select id="leapletList" resultType="com.covely.dto.LeapletDTO" >
+		select * from leaplet where mno = #{mno}
+	</select>
+	
+	<!-- 더미데이터 -->
+	<insert id="insert" parameterType="com.covely.dto.MartProductDTO">
+		insert into mart_product(mp_name,mp_price,mp_img,mp_origin,mp_classify,mno) 
+		values (#{mp_name},#{mp_price},#{mp_img},#{mp_origin},#{mp_classify},#{mno})
+	</insert>
+	
+	<!-- 토탈페이지(이미지갯수) 데이터베이스 결과내용 [페이징부분] -->
+	<select id="getTotalCount" resultType="int" parameterType="com.covely.dto.Criteria">
+		select count(*) 
+		from mart_product
+		<where> 
+			mno = #{mno}
+			<if test="type !=null">
+			  	and mp_img like concat('%',#{type},'%')			
+			</if>
+		</where>
+
+	</select>
+	
+	<!-- detail 페이지 -->
+	<select id="productDetail" resultType="com.covely.dto.MartProductDTO" parameterType="com.covely.dto.Criteria">
+		select * from mart_product where mp_no = #{mp_no}
+	</select>
+	
+	
+	<!-- 마트검색 -->
+	<select id="martSearchMap" resultType="com.covely.dto.MartDTO" >
+		select * from mart 
+	</select>
+
+	<!-- 장바구니 -->
+	<select id = "martCart" resultType = "com.covely.dto.MartProductDTO" parameterType="java.util.ArrayList">
+	
+    SELECT * ,concat(FORMAT(mp_price , 0),'원') price
+    from mart_product
+	where   1=1 
+		and mp_no in
+        <foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
+           #{item}
+        </foreach>
+	</select>
+	
+	<!-- 장바구니 합계 영역 -->
+	<select id="totalprice" resultType="String" parameterType="java.util.ArrayList">
+		select concat(FORMAT(sum(mp_price), 0),'원') total
+		from mart_product
+		where 1=1 <!-- 무조건 참인 조건 -->
+			and mp_no in <!-- in: 여러가지 값을 한번에 조회 -->
+        <foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
+           #{item}
+        </foreach>
+	</select>
+
+
+
+</mapper>

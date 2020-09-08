@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.covely.mapper.ReplyMapper">
+
+	<insert id="insert">
+	
+		insert into cov_reply(ano, reply, replyer)
+		values(#{ano}, #{reply}, #{replyer})
+	
+	</insert>
+	
+	<select id="read" resultType="com.covely.dto.ReplyVO">
+	
+		select * from cov_reply where rno = #{rno}
+	
+	</select>
+	
+	<delete id="delete">
+		delete from cov_reply where rno = #{rno}
+	</delete>
+	
+	<update id="update">
+	
+		update cov_reply set reply = #{reply}, updatedate = now() where rno = #{rno}
+	
+	</update>
+	
+	<select id="getListWithPaging" resultType="com.covely.dto.ReplyVO" >
+
+		select rno,ano,reply,replyer,replyDate,updateDate
+		from cov_reply
+		where ano = #{ano}
+		and ano > 0
+		order by rno asc limit #{cri.skip}, #{cri.amount}
+		
+	</select>
+	
+	 <select id="getCountByano" resultType="int">
+	
+		select count(rno) from cov_reply where ano = #{ano}
+		
+	</select> 
+	
+	
+	
+	
+	
+
+</mapper>    

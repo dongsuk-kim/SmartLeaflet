@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.covely.mapper.BoardAttachMapper">
+
+	<insert id="insert">
+	
+	<!-- last_insert_id 함수는 테이블의 마지막 auto_increment 값을 리턴한다.
+	간혹 이를 잘못 이해 해서  해당테이블에 insert 성공된 마지막 값이라고 설명하거나 인터넷에 게시된 글들을 보게 된다.
+ 	-->
+	insert into tbl_attach (uuid, uploadpath, filename, filetype, ano)
+	values (#{uuid}, #{uploadPath}, #{fileName}, #{fileType}, LAST_INSERT_ID() ) <!-- LAST_INSERT_ID() -->
+	</insert>		
+	
+	
+	<insert id="insertModify">
+	
+	<!-- LAST INSERT ID를 만들면 수정이 안되서 대신 ano를 넣었는데 이것을 대체할 수 있는 방법이 있는지? -->
+	insert into tbl_attach (uuid, uploadpath, filename, filetype, ano)
+	values (#{uuid}, #{uploadPath}, #{fileName}, #{fileType}, #{ano} ) 
+	</insert>
+	
+	
+	
+	<delete id="delete">
+	
+	delete from tbl_attach where uuid = #{uuid}
+	
+	</delete>
+	
+	<select id="findByano" resultType="com.covely.dto.BoardAttachVO">
+		select * from tbl_attach where ano = #{ano}
+	</select>
+	
+	<delete id="deleteAll">
+	
+		delete from tbl_attach where ano = #{ano}
+	
+	</delete>
+	
+	<select id="getOldFiles" resultType="com.covely.dto.BoardAttachVO">
+		
+		select * from tbl_attach where uploadpath = date_format(now() - interval 1 day, '%Y-%M-%D') <!-- 어제 날짜를 처리함: -->
+		
+	</select>
+
+</mapper>
+    
